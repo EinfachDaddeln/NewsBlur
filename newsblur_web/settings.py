@@ -47,13 +47,14 @@ from utils.mongo_command_monitor import MongoCommandLogger
 # = Server Settings =
 # ===================
 
-ADMINS = (("Samuel Clay", "samuel@newsblur.com"),)
+ADMINS = (("Admin", "admin@einfachzocken.eu"),)
 
-SERVER_NAME = "newsblur"
-SERVER_EMAIL = "server@newsblur.com"
-HELLO_EMAIL = "hello@newsblur.com"
-NEWSBLUR_URL = "https://www.newsblur.com"
-IMAGES_URL = "https://imageproxy.newsblur.com"
+SERVER_NAME = "newsblur-einfachzocken"
+SERVER_EMAIL = "newsblur@einfachzocken.eu"
+HELLO_EMAIL = SERVER_EMAIL
+NEWSBLUR_URL = "https://nb.einfachzocken.eu"
+#IMAGES_URL = "https://imageproxy.newsblur.com"
+IMAGES_URL = "about:blank"
 PUSH_DOMAIN = "push.newsblur.com"
 SECRET_KEY = "YOUR_SECRET_KEY"
 IMAGES_SECRET_KEY = "YOUR_SECRET_IMAGE_KEY"
