@@ -2,10 +2,8 @@
 
 - NewsBlur is a personal news reader bringing people together
   to talk about the world. A new sound of an old instrument.
-- [www.newsblur.com](https://www.newsblur.com).
+- This a fork to make it run on our hardware. We don't care about digitalocean support, so that might not work.
 - Created by [Samuel Clay](https://www.samuelclay.com).
-- X/Twitter: [@samuelclay](https://x.com/samuelclay) and
-  [@newsblur](https://x.com/newsblur).
 
 <a href="https://f-droid.org/repository/browse/?fdid=com.newsblur" target="_blank">
 <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>

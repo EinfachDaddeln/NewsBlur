@@ -151,6 +151,16 @@ class SignupForm(forms.Form):
                     )
                 )
                 raise forms.ValidationError("Seriously, fuck off spammer.")
+
+            if ("einfachzocken" in email):
+                logging.info(
+                    " ***> [%s] @einfachzocken email signup stopped"
+                    % (
+                        email,
+                    )
+                )
+                raise forms.ValidationError("We don't support signups from @einfachzocken emails")
+
             try:
                 domain = email.rsplit("@", 1)[-1]
                 if not query(domain, "MX"):

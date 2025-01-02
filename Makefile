@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 CURRENT_UID := $(shell id -u)
 CURRENT_GID := $(shell id -g)
-newsblur := $(shell gtimeout 2s docker ps -qf "name=newsblur_web")
+newsblur := $(shell timeout 2s docker ps -qf "name=newsblur_web")
 
 .PHONY: node
 
@@ -85,8 +85,7 @@ keys:
 	openssl req -new -nodes -newkey rsa:2048 -keyout config/certificates/localhost.key -out config/certificates/localhost.csr -subj "/C=US/ST=YourState/L=YourCity/O=Example-Certificates/CN=localhost"
 	openssl x509 -req -sha256 -days 1024 -in config/certificates/localhost.csr -CA config/certificates/RootCA.pem -CAkey config/certificates/RootCA.key -CAcreateserial -out config/certificates/localhost.crt
 	cat config/certificates/localhost.crt config/certificates/localhost.key > config/certificates/localhost.pem
-	sudo /usr/bin/security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ./config/certificates/RootCA.crt
-
+	
 # Doesn't work yet
 mkcert:
 	mkdir config/mkcert
@@ -95,7 +94,7 @@ mkcert:
 		mkcert -cert-file /root/.local/share/mkcert/mkcert.pem \
 		-key-file /root/.local/share/mkcert/mkcert.key localhost"
 	cat config/mkcert/rootCA.pem config/mkcert/rootCA-key.pem > config/certificates/localhost.pem
-	sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ./config/mkcert/rootCA.pem
+	
 
 # Digital Ocean / Terraform
 list:

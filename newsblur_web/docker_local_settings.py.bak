@@ -5,14 +5,13 @@ import os
 # = Server Settings =
 # ===================
 
-ADMINS = (("Admin", "admin@einfachzocken.eu"),)
+ADMINS = (("Samuel Clay", "samuel@newsblur.com"),)
 
-SERVER_EMAIL = "newsblur@einfachzocken.eu"
-#HELLO_EMAIL = "hello@newsblur.com"
-HELLO_EMAIL = SERVER_EMAIL
-NEWSBLUR_URL = "https://nb.einfachzocken.eu"
+SERVER_EMAIL = "server@newsblur.com"
+HELLO_EMAIL = "hello@newsblur.com"
+NEWSBLUR_URL = "https://localhost"
 PUSH_DOMAIN = "localhost"
-SESSION_COOKIE_DOMAIN = "nb.einfachzocken.eu"
+SESSION_COOKIE_DOMAIN = "localhost"
 
 # ===================
 # = Global Settings =
@@ -26,7 +25,7 @@ DEBUG = False
 # `./manage.py collectstatic` first. Turn this on for development so you can see
 # changes in your JS/CSS.
 DEBUG_ASSETS = False  # Make sure to run `./manage.py collectstatic` first
-#DEBUG_ASSETS = True
+DEBUG_ASSETS = True
 
 # DEBUG_QUERIES controls the output of the database query logs. Can be rather verbose
 # but is useful to catch slow running queries. A summary is also useful in cutting
@@ -39,11 +38,11 @@ MEDIA_URL = "/media/"
 IMAGES_URL = "/imageproxy"
 # Uncomment below to debug iOS/Android widget
 # IMAGES_URL = 'https://haproxy/imageproxy'
-#SECRET_KEY = "YOUR SECRET KEY"
+SECRET_KEY = "YOUR SECRET KEY"
 AUTO_PREMIUM_NEW_USERS = True
 AUTO_PREMIUM_ARCHIVE_NEW_USERS = True
 AUTO_PREMIUM_PRO_NEW_USERS = True
-AUTO_PREMIUM = True # Everyone should get Premium!
+AUTO_PREMIUM = True
 # AUTO_PREMIUM = False
 if not AUTO_PREMIUM:
     AUTO_PREMIUM_NEW_USERS = False
@@ -78,8 +77,8 @@ S3_PAGES_BUCKET_NAME = "pages-XXX.newsblur.com"
 S3_ICONS_BUCKET_NAME = "icons-XXX.newsblur.com"
 S3_AVATARS_BUCKET_NAME = "avatars-XXX.newsblur.com"
 
-STRIPE_SECRET = "YOUR-SECRET-API-KEY" # dont need this
-STRIPE_PUBLISHABLE = "YOUR-PUBLISHABLE-API-KEY" # not this either
+STRIPE_SECRET = "YOUR-SECRET-API-KEY"
+STRIPE_PUBLISHABLE = "YOUR-PUBLISHABLE-API-KEY"
 
 # ===============
 # = Social APIs =
@@ -164,14 +163,14 @@ DO_TOKEN_LOG = "0000000000000000000000000000000000000000000000000000000000000000
 DO_TOKEN_FABRIC = "0000000000000000000000000000000000000000000000000000000000000000"
 
 SERVER_NAME = "nblocalhost"
-NEWSBLUR_URL = os.getenv("NEWSBLUR_URL", "https://nb.einfachzocken.eu")
+NEWSBLUR_URL = os.getenv("NEWSBLUR_URL", "https://localhost")
 
-if NEWSBLUR_URL == "https://nb.einfachzocken.eu":
-    SESSION_COOKIE_DOMAIN = "nb.einfachzocken.eu"
+if NEWSBLUR_URL == "https://localhost":
+    SESSION_COOKIE_DOMAIN = "localhost"
 
 SESSION_ENGINE = "redis_sessions.session"
 
 # CORS_ORIGIN_REGEX_WHITELIST = ('^(https?://)?(\w+\.)?nb.local\.com$', )
 
-RECAPTCHA_SECRET_KEY = "0000000000000000000000000000000000000000" # let's pray i dont need this (otherwise i have to migrate to librecaptcha or something)
+RECAPTCHA_SECRET_KEY = "0000000000000000000000000000000000000000"
 IMAGES_SECRET_KEY = "0000000000000000000000000000000"

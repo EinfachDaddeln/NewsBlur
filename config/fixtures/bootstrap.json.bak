@@ -3,7 +3,7 @@
         "pk": 1,
         "model": "sites.site",
         "fields": {
-            "domain": "nb.einfachzocken.eu",
+            "domain": "localhost",
             "name": "NewsBlur"
         }
     },    
